@@ -1,0 +1,20 @@
+:host(.inactive), :host(.inactive) h3 {
+  color: #ccc;
+}
+
+:host {
+  display: block;
+}
+
+.form-control {
+  max-width: 30%;
+  display: inline-block;
+}
+
+.panel-heading {
+  transition: background-color 300ms ease-out;
+}
+
+.label {
+  transition: background-color 150ms;
+}

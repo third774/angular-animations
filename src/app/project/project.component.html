@@ -1,0 +1,34 @@
+<div class="panel panel-default"
+  [ngClass]="{'panel-default': !selected, 'panel-primary': selected}"
+>
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      {{ project.name }}
+      <!-- Show different usages of ngClass and ngStyle"-->
+      <span
+        [@statusChanged]="project.status"
+        [ngClass]="{'label-default': project.status === 'inactive',
+                'label-success': project.status === 'active',
+                'label-warning': project.status === 'critical'
+    }"
+        class="label pull-right">{{ project.status }}</span>
+    </h3>
+  </div>
+
+  <div class="panel-body">
+    <p>{{ project.description }}</p>
+    <select #prjStatus class="form-control" [ngStyle]="{'margin-bottom.px': 15}">
+      <option value="active" [selected]="project.status === 'active'">Active</option>
+      <option value="inactive" [selected]="project.status === 'inactive'">Inactive</option>
+      <option value="critical" [selected]="project.status === 'critical'">Critical</option>
+    </select>
+
+    <div class="pull-right">
+      <button class="btn btn-primary" (click)="onUpdateStatus(prjStatus.value)">Update Status</button>
+      <button class="btn btn-danger" (click)="onDelete()">Delete Project</button>
+    </div>
+
+
+
+  </div>
+</div>

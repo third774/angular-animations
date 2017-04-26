@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>My Projects</h3>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <button
+      class="btn btn-default"
+      *ngIf="!createNew"
+      (click)="createNew = true">Create new Project</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12" style="overflow: hidden">
+    <app-new-project
+      *ngIf="createNew"
+      @creatingProject
+      (projectCreated)="onProjectCreated($event)"
+      (creationCancelled)="createNew = false"></app-new-project>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="loading-bar"
+      *ngIf="!projects">
+      <div
+        class="loading-bar-element"
+        *ngIf="progress != 'finished'"></div>
+    </div>
+    <app-project
+      *ngFor="let prj of displayedProjects; let i = index"
+      [project]="prj"
+      [@selectedState]="i === markedPrjIndex ? 'selected' : 'not-selected'"
+      [@projectListState]="createNew ? 'slidDown' : 'slidUp'"
+      (@selectedState.done)="onItemAnimated($event, i)"
+      [selected]="i === markedPrjIndex"
+      [ngClass]="{inactive: prj.status === 'inactive'}"
+      (statusUpdated)="onStatusUpdated($event, i)"
+      (projectDeleted)="onProjectDeleted(i)"
+      (click)="markedPrjIndex = i"></app-project>
+  </div>
+</div>
