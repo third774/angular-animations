@@ -36,7 +36,9 @@
   <button
     type="submit"
     [disabled]="!f.valid"
-    class="btn btn-success">Create Project</button>
+    class="btn"
+    [ngClass]="{'btn-success': f.valid, 'btn-danger': !f.valid}"
+  >Create Project</button>
   <button
     type="button"
     class="btn btn-danger"

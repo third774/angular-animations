@@ -1,3 +1,63 @@
 :host {
   display: block;
 }
+
+.btn {
+  transition: background-color 300ms ease-out, color 300ms ease-out;
+}
+
+.valid, .btn-success {
+  animation: jump 300ms;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0%)
+  }
+  25% {
+    transform: translateY(-30%)
+  }
+  50% {
+    transform: translateY(0%)
+  }
+  60% {
+    transform: translateY(-15%)
+  }
+  70% {
+    transform: translateY(0%)
+  }
+  80% {
+    transform: translateY(-6%)
+  }
+  90% {
+    transform: translateY(0%)
+  }
+  95% {
+    transform: translateY(-3%)
+  }
+  100% {
+    transform: translateY(0%)
+  }
+}
+
+.invalid, .btn-danger {
+  animation: shake 200ms ease-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0)
+  }
+  25% {
+    transform: translateX(-5%)
+  }
+  50% {
+    transform: translateX(5%)
+  }
+  75% {
+    transform: translateX(-5%)
+  }
+  100% {
+    transform: translateX(0)
+  }
+}
