@@ -1,7 +1,7 @@
-import {Observable} from "rxjs/Observable";
-import {Observer} from "rxjs/Observer";
+import {Observable} from 'rxjs/Observable';
+import {Observer} from 'rxjs/Observer';
 
-import {Project} from "./project.model";
+import {Project} from './project.model';
 
 export class ProjectsService {
   private projects: Project[] = [

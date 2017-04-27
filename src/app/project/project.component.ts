@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
-import {Project} from "../projects/project.model";
-import {statusChanged} from "../animations/project.animations";
+import {Project} from '../projects/project.model';
+import {statusChanged} from '../animations/project.animations';
 
 @Component({
   selector: 'app-project',

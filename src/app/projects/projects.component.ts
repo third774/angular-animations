@@ -1,10 +1,10 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 
-import {Project} from "./project.model";
+import {Project} from './project.model';
 
-import {ProjectsService} from "./projects.service";
-import {creatingProjectState, projectListStateTrigger, selectedState} from "../animations/project.animations";
-import {AnimationEvent} from "@angular/animations";
+import {ProjectsService} from './projects.service';
+import {creatingProjectState, projectListStateTrigger, selectedState} from '../animations/project.animations';
+import {AnimationEvent} from '@angular/animations';
 
 @Component({
   selector: 'app-projects',
@@ -31,7 +31,7 @@ export class ProjectsComponent implements OnInit {
           if (this.projects.length > 0) {
             this.displayedProjects.push(this.projects[0]);
             let i = 1;
-            var interval = setInterval(() => {
+            const interval = setInterval(() => {
               if (this.projects[i]) {
                 this.displayedProjects.push(this.projects[i]);
                 i++;
@@ -60,6 +60,8 @@ export class ProjectsComponent implements OnInit {
 
   onProjectCreated(project: Project) {
     this.createNew = false;
-    this.projects.push(project);
+    setTimeout(() => {
+      this.projects.push(project);
+    }, 300);
   }
 }

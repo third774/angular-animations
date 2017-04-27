@@ -1,4 +1,4 @@
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 export const selectedState = trigger('selectedState', [
   state('not-selected', style({
@@ -41,7 +41,7 @@ export const projectListStateTrigger = trigger('projectListState', [
   ]),
   transition('slidUp => slidDown', [
     style({
-      transform: 'translateY(-100%)'
+      transform: 'translateY(-180%)'
     }),
     animate('300ms ease-out', style({
       transform: 'translateY(0)'
@@ -52,7 +52,7 @@ export const projectListStateTrigger = trigger('projectListState', [
       transform: 'translateY(0)'
     }),
     animate('300ms ease-in', style({
-      transform: 'translateY(-100%)'
+      transform: 'translateY(-180%)'
     }))
   ])
 ]);
