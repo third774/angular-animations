@@ -5,17 +5,18 @@ import {Project} from './project.model';
 import {ProjectsService} from './projects.service';
 import {creatingProjectState, projectListStateTrigger, selectedState} from '../animations/project.animations';
 import {AnimationEvent} from '@angular/animations';
-import {routeFadeStateTrigger} from '../animations/route.animations';
+import { routeFadeStateTrigger, routeSlideStateTrigger } from '../animations/route.animations';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  animations: [selectedState, creatingProjectState, projectListStateTrigger, routeFadeStateTrigger]
+  animations: [selectedState, creatingProjectState, projectListStateTrigger, routeFadeStateTrigger, routeSlideStateTrigger]
 })
 export class ProjectsComponent implements OnInit {
 
-  @HostBinding('@routeFadeState') routeFadeState = true;
+  // @HostBinding('@routeFadeState') routeFadeState = true;
+  @HostBinding('@routeSlideState') routeFadeState = true;
 
 
   projects: Project[];
