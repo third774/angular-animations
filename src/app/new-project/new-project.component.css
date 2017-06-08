@@ -7,7 +7,7 @@
 }
 
 .valid, .btn-success {
-  animation: jump 300ms;
+  /*animation: jump 300ms;*/
 }
 
 @keyframes jump {
@@ -41,7 +41,7 @@
 }
 
 .invalid, .btn-danger {
-  animation: shake 200ms ease-out;
+  /*animation: shake 200ms ease-out;*/
 }
 
 @keyframes shake {

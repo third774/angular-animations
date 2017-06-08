@@ -3,6 +3,7 @@
   <div class="form-group">
     <label for="name" class="control-label">Name</label>
     <input
+      autocomplete="off"
       type="text"
       id="name"
       ngModel
@@ -14,6 +15,7 @@
     <label for="description">Description</label>
     <input
       type="text"
+      autocomplete="off"
       id="description"
       ngModel
       name="description"
@@ -37,7 +39,7 @@
     type="submit"
     [disabled]="!f.valid"
     class="btn"
-    [ngClass]="{'btn-success': f.valid, 'btn-danger': !f.valid}"
+    [ngClass]="{'btn-success': f.valid, 'btn-default disabled': !f.valid}"
   >Create Project</button>
   <button
     type="button"
